@@ -36,7 +36,7 @@ public class AddEmployeeTest extends DriverFactory {
 		 pimPage.PIMLink();
 		 Thread.sleep(5000);
 		 pimPage.ClickOnAddButton();
-		 pimPage.addEmployee("Vladimir ", "Govorov");
+		 pimPage.addEmployee("Vladimir ", "Govorov"); 
 	}
 
 
