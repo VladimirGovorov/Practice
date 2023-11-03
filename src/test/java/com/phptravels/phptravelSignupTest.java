@@ -10,7 +10,7 @@ import com.phptravels.driverFactory.DriverFactory;
 import com.phptravels.pages.LoginPage;
 
 public class phptravelSignupTest extends DriverFactory {
-	
+	//Webdriver driver;
 	LoginPage loginPage;
 	@BeforeTest
 	public void startPhpTravelsApp() throws IOException, InterruptedException

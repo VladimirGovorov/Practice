@@ -31,6 +31,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -117,19 +118,20 @@ public class PhpTravelActions {
 	
 	public void ApplicationURL()
 	{
-		driver.get(prop.getProperty("AppUrl"));
+		driver.get(prop.getProperty("AppHRM"));
 	}
 	
 	        // Wait for element to appear
 			public void waitForElementToAppear(By elementBy) {
 				wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 				wait.until(ExpectedConditions.visibilityOfElementLocated(elementBy));
-				highLightElement(elementBy);
+				//highLightElement(elementBy);
 			}
 			// Wait for element to be clickable
 			public void waitForElementToClick(By elementBy) {
+				wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 				wait.until(ExpectedConditions.elementToBeClickable(elementBy));
-				highLightElement(elementBy);
+				//highLightElement(elementBy);
 			}
 			// Wait for alert to appear
 			public void waitForAlertToAppear() {
@@ -137,6 +139,8 @@ public class PhpTravelActions {
 				if (alert != null) {
 					isAlertPresent();
 				}
+				
+			
 			}
 		    // isElementPresent
 			public boolean isElementPresent(By elementBy) {
@@ -230,7 +234,7 @@ public class PhpTravelActions {
 			public void writeText(By elementBy, String text, String elementName) {
 			     	waitForElementToAppear(elementBy);
 					WebElement element= driver.findElement(elementBy);
-				//	highLightElement(element);
+					highLightElement(element);
 					element.clear();
 					element.sendKeys(text);
 					String temp = Screenshot.captureScreen(driver, elementName);
@@ -371,8 +375,7 @@ public class PhpTravelActions {
 			// JavaScript click
 			public void javaScriptClick(By elementBy, String logMsg, String elementName) {
 					WebElement element=driver.findElement(elementBy);
-					Log.info("Trying to find element : "+element.getText());
-					waitForElementToClick(elementBy);
+					//waitForElementToClick(elementBy);
 					highLightElement(elementBy);
 					String temp = Screenshot.captureScreen(driver, elementName);
 					Log.info(temp, "Clicking on :"+element.getText());
@@ -404,7 +407,7 @@ public class PhpTravelActions {
 			// Scroll page
 			public void scroll() {
 					JavascriptExecutor jse = (JavascriptExecutor) driver;
-					jse.executeScript("window.scrollBy(0,400)", "");
+					jse.executeScript("window.scrollBy(0,600)", "");
 			}
 			// Scroll page
 			public void scrollUp() {

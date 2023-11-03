@@ -4,14 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.phptravels.actions.PhpTravelActions;
+import com.phptravels.utility.ConfigFileReader;
 
 public class LoginPage extends PhpTravelActions{
 	
 	public WebDriver driver;
+	ConfigFileReader configFileReader;
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
+		configFileReader = new ConfigFileReader();
 	}
 	
 	By Username = By.xpath("//input[@name='username']");
@@ -27,6 +30,11 @@ public class LoginPage extends PhpTravelActions{
 		writeText(Password, passwd,"Password");
 		//waitForElementToClickable(loginButton);
 	    click(loginButton, "LoginButton");
+	    
+	}
+	public void launchApplication()
+	{
+		driver.get(configFileReader.getApplicationUrl());
 	}
 
 }
