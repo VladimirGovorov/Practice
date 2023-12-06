@@ -1,5 +1,16 @@
-# Practice
-Make sure once you have the project in your system and editor to download TestNG library from your marketplace
-Import all necessary annotations that come with the testng library e.g.(@Test, @BeforeTest)
-Import all java packages (most of the objects used come from java packages. If you have any question about which imports to select feel free to ask)
+# Selenium Java WebDriver Project
 
+##Prerequesites
+-java 11: [Download Java](https://www.oracle.com/java/technologies/javase-downloads.html) 
+-maven: [Download Maven](https://maven.apache.org/download.cgi) (faster to install with homebrew)
+-eclipse IDE: [Download Eclipse](https://www.eclipse.org/downloads/)
+
+  ##Steps
+
+  1.Clone the repository into your local system with command: git clone https://github.com/VladimirGovorov/cucumber-selenium-project.git
+  
+  2.Once you have eclipse installed import from your local system:
+  File>Import>Existing Maven Project>Folder where you cloned the project
+
+
+  
