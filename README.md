@@ -13,7 +13,9 @@ tutorial:https://www.youtube.com/watch?v=u_m_DPdW6hY
 
   ##Steps
 
-  1.Clone the repository into your local system with command: git clone https://github.com/VladimirGovorov/cucumber-selenium-project.git
+  1.Clone the repository into your local system with command:
+  
+  ```git clone https://github.com/VladimirGovorov/cucumber-selenium-project.git ```  
   
   2.Once you have eclipse installed import from your local system:
   File>Import>Existing Maven Project>Folder where you cloned the project
